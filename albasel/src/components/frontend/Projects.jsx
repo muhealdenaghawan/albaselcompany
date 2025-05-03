@@ -2,7 +2,8 @@ import React from 'react'
 import Header from '../common/Header'
 import Footer from '../common/Footer'
 import Hero from '../common/Hero'
-import ConstructionImg from'../../assets/images/construction2.jpg';
+import ConstructionImg from '../../assets/images/construction2.jpg';
+import ConstructionImg1 from '../../assets/images/111.jpg';
 
 const Projects = () => {
   return (
@@ -43,7 +44,7 @@ const Projects = () => {
                     <div className='col-md-4 col-lg-4'>
                       <div className='item'>
                         <div className='service-image'>
-                          <img src={ConstructionImg} alt="" className='w-100'/>
+                          <img src={ConstructionImg1} alt="" className='w-100'/>
                           </div>
                           <div className='service-body'>
                             <div className='service-title'>

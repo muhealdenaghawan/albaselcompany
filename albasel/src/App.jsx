@@ -19,7 +19,7 @@ import RequireAuth from './components/common/RequireAuth';
 
 // import React from 'react';
 
-import { AuthProvider } from './components/backend/context/Auth'; // تأكد من الاستيراد هنا
+import { AuthProvider } from './components/backend/context/Auth'; 
 
 function App() {
 

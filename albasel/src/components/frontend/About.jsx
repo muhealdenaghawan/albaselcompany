@@ -21,7 +21,7 @@ const About = () => {
           <section className='section-8 bg-light py-5'>
             <div className='container'>
               <div className='section-header text-center'>
-                <span>TEAM</span>
+                <span>TEAM</span> 
                 <h2>Our Team</h2>
                 <p>We specialize in a wide range of construction secices. including residential, commercial, and industrial projects.</p>  
               </div>
