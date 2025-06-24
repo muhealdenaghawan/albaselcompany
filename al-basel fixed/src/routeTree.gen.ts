@@ -8,6 +8,7 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
+<<<<<<< HEAD
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as GuestSettingsRouteRouteImport } from './routes/guest-settings/route'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
@@ -43,10 +44,54 @@ const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const GuestSettingsIndexRoute = GuestSettingsIndexRouteImport.update({
+=======
+// Import Routes
+
+import { Route as rootRoute } from './routes/__root'
+import { Route as GuestSettingsRouteImport } from './routes/guest-settings/route'
+import { Route as AuthenticatedRouteImport } from './routes/_authenticated/route'
+import { Route as GuestSettingsIndexImport } from './routes/guest-settings/index'
+import { Route as EmployeeIndexImport } from './routes/employee/index'
+import { Route as ClientIndexImport } from './routes/client/index'
+import { Route as AuthenticatedIndexImport } from './routes/_authenticated/index'
+import { Route as GuestSettingsAppearanceImport } from './routes/guest-settings/appearance'
+import { Route as errors503Import } from './routes/(errors)/503'
+import { Route as errors500Import } from './routes/(errors)/500'
+import { Route as errors404Import } from './routes/(errors)/404'
+import { Route as errors403Import } from './routes/(errors)/403'
+import { Route as errors401Import } from './routes/(errors)/401'
+import { Route as authSignUpImport } from './routes/(auth)/sign-up'
+import { Route as authSignInImport } from './routes/(auth)/sign-in'
+import { Route as AuthenticatedSettingsRouteImport } from './routes/_authenticated/settings/route'
+import { Route as GuestClientProjectIndexImport } from './routes/guest/client-project/index'
+import { Route as AuthenticatedUsersIndexImport } from './routes/_authenticated/users/index'
+import { Route as AuthenticatedSettingsIndexImport } from './routes/_authenticated/settings/index'
+import { Route as AuthenticatedServicesIndexImport } from './routes/_authenticated/services/index'
+import { Route as AuthenticatedProjectsIndexImport } from './routes/_authenticated/projects/index'
+import { Route as AuthenticatedProjectsServiceIndexImport } from './routes/_authenticated/projects-service/index'
+import { Route as AuthenticatedMaterialsIndexImport } from './routes/_authenticated/materials/index'
+import { Route as AuthenticatedSettingsAppearanceImport } from './routes/_authenticated/settings/appearance'
+
+// Create/Update Routes
+
+const GuestSettingsRouteRoute = GuestSettingsRouteImport.update({
+  id: '/guest-settings',
+  path: '/guest-settings',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const AuthenticatedRouteRoute = AuthenticatedRouteImport.update({
+  id: '/_authenticated',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const GuestSettingsIndexRoute = GuestSettingsIndexImport.update({
+>>>>>>> 91bf35ca6f238bf65fa245b61edd288edd64202a
   id: '/',
   path: '/',
   getParentRoute: () => GuestSettingsRouteRoute,
 } as any)
+<<<<<<< HEAD
 const EmployeeIndexRoute = EmployeeIndexRouteImport.update({
   id: '/employee/',
   path: '/employee/',
@@ -58,15 +103,37 @@ const ClientIndexRoute = ClientIndexRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthenticatedIndexRoute = AuthenticatedIndexRouteImport.update({
+=======
+
+const EmployeeIndexRoute = EmployeeIndexImport.update({
+  id: '/employee/',
+  path: '/employee/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ClientIndexRoute = ClientIndexImport.update({
+  id: '/client/',
+  path: '/client/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const AuthenticatedIndexRoute = AuthenticatedIndexImport.update({
+>>>>>>> 91bf35ca6f238bf65fa245b61edd288edd64202a
   id: '/',
   path: '/',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+<<<<<<< HEAD
 const GuestSettingsAppearanceRoute = GuestSettingsAppearanceRouteImport.update({
+=======
+
+const GuestSettingsAppearanceRoute = GuestSettingsAppearanceImport.update({
+>>>>>>> 91bf35ca6f238bf65fa245b61edd288edd64202a
   id: '/appearance',
   path: '/appearance',
   getParentRoute: () => GuestSettingsRouteRoute,
 } as any)
+<<<<<<< HEAD
 const errors503Route = errors503RouteImport.update({
   id: '/(errors)/503',
   path: '/503',
@@ -114,10 +181,71 @@ const GuestClientProjectIndexRoute = GuestClientProjectIndexRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthenticatedUsersIndexRoute = AuthenticatedUsersIndexRouteImport.update({
+=======
+
+const errors503Route = errors503Import.update({
+  id: '/(errors)/503',
+  path: '/503',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const errors500Route = errors500Import.update({
+  id: '/(errors)/500',
+  path: '/500',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const errors404Route = errors404Import.update({
+  id: '/(errors)/404',
+  path: '/404',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const errors403Route = errors403Import.update({
+  id: '/(errors)/403',
+  path: '/403',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const errors401Route = errors401Import.update({
+  id: '/(errors)/401',
+  path: '/401',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const authSignUpRoute = authSignUpImport.update({
+  id: '/(auth)/sign-up',
+  path: '/sign-up',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const authSignInRoute = authSignInImport.update({
+  id: '/(auth)/sign-in',
+  path: '/sign-in',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const AuthenticatedSettingsRouteRoute = AuthenticatedSettingsRouteImport.update(
+  {
+    id: '/settings',
+    path: '/settings',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any,
+)
+
+const GuestClientProjectIndexRoute = GuestClientProjectIndexImport.update({
+  id: '/guest/client-project/',
+  path: '/guest/client-project/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const AuthenticatedUsersIndexRoute = AuthenticatedUsersIndexImport.update({
+>>>>>>> 91bf35ca6f238bf65fa245b61edd288edd64202a
   id: '/users/',
   path: '/users/',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+<<<<<<< HEAD
 const AuthenticatedSettingsIndexRoute =
   AuthenticatedSettingsIndexRouteImport.update({
     id: '/',
@@ -138,24 +266,293 @@ const AuthenticatedProjectsIndexRoute =
   } as any)
 const AuthenticatedProjectsServiceIndexRoute =
   AuthenticatedProjectsServiceIndexRouteImport.update({
+=======
+
+const AuthenticatedSettingsIndexRoute = AuthenticatedSettingsIndexImport.update(
+  {
+    id: '/',
+    path: '/',
+    getParentRoute: () => AuthenticatedSettingsRouteRoute,
+  } as any,
+)
+
+const AuthenticatedServicesIndexRoute = AuthenticatedServicesIndexImport.update(
+  {
+    id: '/services/',
+    path: '/services/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any,
+)
+
+const AuthenticatedProjectsIndexRoute = AuthenticatedProjectsIndexImport.update(
+  {
+    id: '/projects/',
+    path: '/projects/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any,
+)
+
+const AuthenticatedProjectsServiceIndexRoute =
+  AuthenticatedProjectsServiceIndexImport.update({
+>>>>>>> 91bf35ca6f238bf65fa245b61edd288edd64202a
     id: '/projects-service/',
     path: '/projects-service/',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
+<<<<<<< HEAD
 const AuthenticatedMaterialsIndexRoute =
   AuthenticatedMaterialsIndexRouteImport.update({
+=======
+
+const AuthenticatedMaterialsIndexRoute =
+  AuthenticatedMaterialsIndexImport.update({
+>>>>>>> 91bf35ca6f238bf65fa245b61edd288edd64202a
     id: '/materials/',
     path: '/materials/',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
+<<<<<<< HEAD
 const AuthenticatedSettingsAppearanceRoute =
   AuthenticatedSettingsAppearanceRouteImport.update({
+=======
+
+const AuthenticatedSettingsAppearanceRoute =
+  AuthenticatedSettingsAppearanceImport.update({
+>>>>>>> 91bf35ca6f238bf65fa245b61edd288edd64202a
     id: '/appearance',
     path: '/appearance',
     getParentRoute: () => AuthenticatedSettingsRouteRoute,
   } as any)
 
+<<<<<<< HEAD
 export interface FileRoutesByFullPath {
+=======
+// Populate the FileRoutesByPath interface
+
+declare module '@tanstack/react-router' {
+  interface FileRoutesByPath {
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: ''
+      preLoaderRoute: typeof AuthenticatedRouteImport
+      parentRoute: typeof rootRoute
+    }
+    '/guest-settings': {
+      id: '/guest-settings'
+      path: '/guest-settings'
+      fullPath: '/guest-settings'
+      preLoaderRoute: typeof GuestSettingsRouteImport
+      parentRoute: typeof rootRoute
+    }
+    '/_authenticated/settings': {
+      id: '/_authenticated/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof AuthenticatedSettingsRouteImport
+      parentRoute: typeof AuthenticatedRouteImport
+    }
+    '/(auth)/sign-in': {
+      id: '/(auth)/sign-in'
+      path: '/sign-in'
+      fullPath: '/sign-in'
+      preLoaderRoute: typeof authSignInImport
+      parentRoute: typeof rootRoute
+    }
+    '/(auth)/sign-up': {
+      id: '/(auth)/sign-up'
+      path: '/sign-up'
+      fullPath: '/sign-up'
+      preLoaderRoute: typeof authSignUpImport
+      parentRoute: typeof rootRoute
+    }
+    '/(errors)/401': {
+      id: '/(errors)/401'
+      path: '/401'
+      fullPath: '/401'
+      preLoaderRoute: typeof errors401Import
+      parentRoute: typeof rootRoute
+    }
+    '/(errors)/403': {
+      id: '/(errors)/403'
+      path: '/403'
+      fullPath: '/403'
+      preLoaderRoute: typeof errors403Import
+      parentRoute: typeof rootRoute
+    }
+    '/(errors)/404': {
+      id: '/(errors)/404'
+      path: '/404'
+      fullPath: '/404'
+      preLoaderRoute: typeof errors404Import
+      parentRoute: typeof rootRoute
+    }
+    '/(errors)/500': {
+      id: '/(errors)/500'
+      path: '/500'
+      fullPath: '/500'
+      preLoaderRoute: typeof errors500Import
+      parentRoute: typeof rootRoute
+    }
+    '/(errors)/503': {
+      id: '/(errors)/503'
+      path: '/503'
+      fullPath: '/503'
+      preLoaderRoute: typeof errors503Import
+      parentRoute: typeof rootRoute
+    }
+    '/guest-settings/appearance': {
+      id: '/guest-settings/appearance'
+      path: '/appearance'
+      fullPath: '/guest-settings/appearance'
+      preLoaderRoute: typeof GuestSettingsAppearanceImport
+      parentRoute: typeof GuestSettingsRouteImport
+    }
+    '/_authenticated/': {
+      id: '/_authenticated/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedIndexImport
+      parentRoute: typeof AuthenticatedRouteImport
+    }
+    '/client/': {
+      id: '/client/'
+      path: '/client'
+      fullPath: '/client'
+      preLoaderRoute: typeof ClientIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/employee/': {
+      id: '/employee/'
+      path: '/employee'
+      fullPath: '/employee'
+      preLoaderRoute: typeof EmployeeIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/guest-settings/': {
+      id: '/guest-settings/'
+      path: '/'
+      fullPath: '/guest-settings/'
+      preLoaderRoute: typeof GuestSettingsIndexImport
+      parentRoute: typeof GuestSettingsRouteImport
+    }
+    '/_authenticated/settings/appearance': {
+      id: '/_authenticated/settings/appearance'
+      path: '/appearance'
+      fullPath: '/settings/appearance'
+      preLoaderRoute: typeof AuthenticatedSettingsAppearanceImport
+      parentRoute: typeof AuthenticatedSettingsRouteImport
+    }
+    '/_authenticated/materials/': {
+      id: '/_authenticated/materials/'
+      path: '/materials'
+      fullPath: '/materials'
+      preLoaderRoute: typeof AuthenticatedMaterialsIndexImport
+      parentRoute: typeof AuthenticatedRouteImport
+    }
+    '/_authenticated/projects-service/': {
+      id: '/_authenticated/projects-service/'
+      path: '/projects-service'
+      fullPath: '/projects-service'
+      preLoaderRoute: typeof AuthenticatedProjectsServiceIndexImport
+      parentRoute: typeof AuthenticatedRouteImport
+    }
+    '/_authenticated/projects/': {
+      id: '/_authenticated/projects/'
+      path: '/projects'
+      fullPath: '/projects'
+      preLoaderRoute: typeof AuthenticatedProjectsIndexImport
+      parentRoute: typeof AuthenticatedRouteImport
+    }
+    '/_authenticated/services/': {
+      id: '/_authenticated/services/'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof AuthenticatedServicesIndexImport
+      parentRoute: typeof AuthenticatedRouteImport
+    }
+    '/_authenticated/settings/': {
+      id: '/_authenticated/settings/'
+      path: '/'
+      fullPath: '/settings/'
+      preLoaderRoute: typeof AuthenticatedSettingsIndexImport
+      parentRoute: typeof AuthenticatedSettingsRouteImport
+    }
+    '/_authenticated/users/': {
+      id: '/_authenticated/users/'
+      path: '/users'
+      fullPath: '/users'
+      preLoaderRoute: typeof AuthenticatedUsersIndexImport
+      parentRoute: typeof AuthenticatedRouteImport
+    }
+    '/guest/client-project/': {
+      id: '/guest/client-project/'
+      path: '/guest/client-project'
+      fullPath: '/guest/client-project'
+      preLoaderRoute: typeof GuestClientProjectIndexImport
+      parentRoute: typeof rootRoute
+    }
+  }
+}
+
+// Create and export the route tree
+
+interface AuthenticatedSettingsRouteRouteChildren {
+  AuthenticatedSettingsAppearanceRoute: typeof AuthenticatedSettingsAppearanceRoute
+  AuthenticatedSettingsIndexRoute: typeof AuthenticatedSettingsIndexRoute
+}
+
+const AuthenticatedSettingsRouteRouteChildren: AuthenticatedSettingsRouteRouteChildren =
+  {
+    AuthenticatedSettingsAppearanceRoute: AuthenticatedSettingsAppearanceRoute,
+    AuthenticatedSettingsIndexRoute: AuthenticatedSettingsIndexRoute,
+  }
+
+const AuthenticatedSettingsRouteRouteWithChildren =
+  AuthenticatedSettingsRouteRoute._addFileChildren(
+    AuthenticatedSettingsRouteRouteChildren,
+  )
+
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedSettingsRouteRoute: typeof AuthenticatedSettingsRouteRouteWithChildren
+  AuthenticatedIndexRoute: typeof AuthenticatedIndexRoute
+  AuthenticatedMaterialsIndexRoute: typeof AuthenticatedMaterialsIndexRoute
+  AuthenticatedProjectsServiceIndexRoute: typeof AuthenticatedProjectsServiceIndexRoute
+  AuthenticatedProjectsIndexRoute: typeof AuthenticatedProjectsIndexRoute
+  AuthenticatedServicesIndexRoute: typeof AuthenticatedServicesIndexRoute
+  AuthenticatedUsersIndexRoute: typeof AuthenticatedUsersIndexRoute
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedSettingsRouteRoute: AuthenticatedSettingsRouteRouteWithChildren,
+  AuthenticatedIndexRoute: AuthenticatedIndexRoute,
+  AuthenticatedMaterialsIndexRoute: AuthenticatedMaterialsIndexRoute,
+  AuthenticatedProjectsServiceIndexRoute:
+    AuthenticatedProjectsServiceIndexRoute,
+  AuthenticatedProjectsIndexRoute: AuthenticatedProjectsIndexRoute,
+  AuthenticatedServicesIndexRoute: AuthenticatedServicesIndexRoute,
+  AuthenticatedUsersIndexRoute: AuthenticatedUsersIndexRoute,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
+interface GuestSettingsRouteRouteChildren {
+  GuestSettingsAppearanceRoute: typeof GuestSettingsAppearanceRoute
+  GuestSettingsIndexRoute: typeof GuestSettingsIndexRoute
+}
+
+const GuestSettingsRouteRouteChildren: GuestSettingsRouteRouteChildren = {
+  GuestSettingsAppearanceRoute: GuestSettingsAppearanceRoute,
+  GuestSettingsIndexRoute: GuestSettingsIndexRoute,
+}
+
+const GuestSettingsRouteRouteWithChildren =
+  GuestSettingsRouteRoute._addFileChildren(GuestSettingsRouteRouteChildren)
+
+export interface FileRoutesByFullPath {
+  '': typeof AuthenticatedRouteRouteWithChildren
+>>>>>>> 91bf35ca6f238bf65fa245b61edd288edd64202a
   '/guest-settings': typeof GuestSettingsRouteRouteWithChildren
   '/settings': typeof AuthenticatedSettingsRouteRouteWithChildren
   '/sign-in': typeof authSignInRoute
@@ -179,6 +576,10 @@ export interface FileRoutesByFullPath {
   '/users': typeof AuthenticatedUsersIndexRoute
   '/guest/client-project': typeof GuestClientProjectIndexRoute
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 91bf35ca6f238bf65fa245b61edd288edd64202a
 export interface FileRoutesByTo {
   '/sign-in': typeof authSignInRoute
   '/sign-up': typeof authSignUpRoute
@@ -201,8 +602,14 @@ export interface FileRoutesByTo {
   '/users': typeof AuthenticatedUsersIndexRoute
   '/guest/client-project': typeof GuestClientProjectIndexRoute
 }
+<<<<<<< HEAD
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
+=======
+
+export interface FileRoutesById {
+  __root__: typeof rootRoute
+>>>>>>> 91bf35ca6f238bf65fa245b61edd288edd64202a
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/guest-settings': typeof GuestSettingsRouteRouteWithChildren
   '/_authenticated/settings': typeof AuthenticatedSettingsRouteRouteWithChildren
@@ -227,9 +634,17 @@ export interface FileRoutesById {
   '/_authenticated/users/': typeof AuthenticatedUsersIndexRoute
   '/guest/client-project/': typeof GuestClientProjectIndexRoute
 }
+<<<<<<< HEAD
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
+=======
+
+export interface FileRouteTypes {
+  fileRoutesByFullPath: FileRoutesByFullPath
+  fullPaths:
+    | ''
+>>>>>>> 91bf35ca6f238bf65fa245b61edd288edd64202a
     | '/guest-settings'
     | '/settings'
     | '/sign-in'
@@ -301,6 +716,10 @@ export interface FileRouteTypes {
     | '/guest/client-project/'
   fileRoutesById: FileRoutesById
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 91bf35ca6f238bf65fa245b61edd288edd64202a
 export interface RootRouteChildren {
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   GuestSettingsRouteRoute: typeof GuestSettingsRouteRouteWithChildren
@@ -316,6 +735,7 @@ export interface RootRouteChildren {
   GuestClientProjectIndexRoute: typeof GuestClientProjectIndexRoute
 }
 
+<<<<<<< HEAD
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
     '/guest-settings': {
@@ -535,6 +955,8 @@ const GuestSettingsRouteRouteChildren: GuestSettingsRouteRouteChildren = {
 const GuestSettingsRouteRouteWithChildren =
   GuestSettingsRouteRoute._addFileChildren(GuestSettingsRouteRouteChildren)
 
+=======
+>>>>>>> 91bf35ca6f238bf65fa245b61edd288edd64202a
 const rootRouteChildren: RootRouteChildren = {
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   GuestSettingsRouteRoute: GuestSettingsRouteRouteWithChildren,
@@ -549,6 +971,134 @@ const rootRouteChildren: RootRouteChildren = {
   EmployeeIndexRoute: EmployeeIndexRoute,
   GuestClientProjectIndexRoute: GuestClientProjectIndexRoute,
 }
+<<<<<<< HEAD
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+=======
+
+export const routeTree = rootRoute
+  ._addFileChildren(rootRouteChildren)
+  ._addFileTypes<FileRouteTypes>()
+
+/* ROUTE_MANIFEST_START
+{
+  "routes": {
+    "__root__": {
+      "filePath": "__root.tsx",
+      "children": [
+        "/_authenticated",
+        "/guest-settings",
+        "/(auth)/sign-in",
+        "/(auth)/sign-up",
+        "/(errors)/401",
+        "/(errors)/403",
+        "/(errors)/404",
+        "/(errors)/500",
+        "/(errors)/503",
+        "/client/",
+        "/employee/",
+        "/guest/client-project/"
+      ]
+    },
+    "/_authenticated": {
+      "filePath": "_authenticated/route.tsx",
+      "children": [
+        "/_authenticated/settings",
+        "/_authenticated/",
+        "/_authenticated/materials/",
+        "/_authenticated/projects-service/",
+        "/_authenticated/projects/",
+        "/_authenticated/services/",
+        "/_authenticated/users/"
+      ]
+    },
+    "/guest-settings": {
+      "filePath": "guest-settings/route.tsx",
+      "children": [
+        "/guest-settings/appearance",
+        "/guest-settings/"
+      ]
+    },
+    "/_authenticated/settings": {
+      "filePath": "_authenticated/settings/route.tsx",
+      "parent": "/_authenticated",
+      "children": [
+        "/_authenticated/settings/appearance",
+        "/_authenticated/settings/"
+      ]
+    },
+    "/(auth)/sign-in": {
+      "filePath": "(auth)/sign-in.tsx"
+    },
+    "/(auth)/sign-up": {
+      "filePath": "(auth)/sign-up.tsx"
+    },
+    "/(errors)/401": {
+      "filePath": "(errors)/401.tsx"
+    },
+    "/(errors)/403": {
+      "filePath": "(errors)/403.tsx"
+    },
+    "/(errors)/404": {
+      "filePath": "(errors)/404.tsx"
+    },
+    "/(errors)/500": {
+      "filePath": "(errors)/500.tsx"
+    },
+    "/(errors)/503": {
+      "filePath": "(errors)/503.tsx"
+    },
+    "/guest-settings/appearance": {
+      "filePath": "guest-settings/appearance.tsx",
+      "parent": "/guest-settings"
+    },
+    "/_authenticated/": {
+      "filePath": "_authenticated/index.tsx",
+      "parent": "/_authenticated"
+    },
+    "/client/": {
+      "filePath": "client/index.tsx"
+    },
+    "/employee/": {
+      "filePath": "employee/index.tsx"
+    },
+    "/guest-settings/": {
+      "filePath": "guest-settings/index.tsx",
+      "parent": "/guest-settings"
+    },
+    "/_authenticated/settings/appearance": {
+      "filePath": "_authenticated/settings/appearance.tsx",
+      "parent": "/_authenticated/settings"
+    },
+    "/_authenticated/materials/": {
+      "filePath": "_authenticated/materials/index.tsx",
+      "parent": "/_authenticated"
+    },
+    "/_authenticated/projects-service/": {
+      "filePath": "_authenticated/projects-service/index.tsx",
+      "parent": "/_authenticated"
+    },
+    "/_authenticated/projects/": {
+      "filePath": "_authenticated/projects/index.tsx",
+      "parent": "/_authenticated"
+    },
+    "/_authenticated/services/": {
+      "filePath": "_authenticated/services/index.tsx",
+      "parent": "/_authenticated"
+    },
+    "/_authenticated/settings/": {
+      "filePath": "_authenticated/settings/index.tsx",
+      "parent": "/_authenticated/settings"
+    },
+    "/_authenticated/users/": {
+      "filePath": "_authenticated/users/index.tsx",
+      "parent": "/_authenticated"
+    },
+    "/guest/client-project/": {
+      "filePath": "guest/client-project/index.tsx"
+    }
+  }
+}
+ROUTE_MANIFEST_END */
+>>>>>>> 91bf35ca6f238bf65fa245b61edd288edd64202a
