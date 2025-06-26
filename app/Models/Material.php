@@ -2,22 +2,20 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Sluggable\SlugOptions;
 use Spatie\Sluggable\HasSlug;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\HasMedia;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Service extends Model  implements HasMedia
+class Material extends Model implements HasMedia
 {
     use HasSlug, InteractsWithMedia, HasFactory;
-
     protected $fillable = [
         'name',
-        'description',
-        'price',
-        'is_active',
+        'is_available',
+        'quantity',
         'slug',
     ];
 
@@ -39,7 +37,7 @@ class Service extends Model  implements HasMedia
     ];
 
     protected $casts = [
-        'is_active' => 'boolean',
+        'is_available' => 'boolean',
     ];
 
     public function scopeFilterByName($query, $name)
@@ -51,13 +49,11 @@ class Service extends Model  implements HasMedia
 
     public function registerMediaCollections(): void
     {
-        $this->addMediaCollection('services')->singleFile();
+        $this->addMediaCollection('materials')->singleFile();
     }
 
-    public function projects()
+    public function projectServiceMaterials()
     {
-        return $this->belongsToMany(Project::class, 'project_services')
-            ->using(ProjectService::class)
-            ->withTimestamps();
+        return $this->hasMany(ProjectServiceMaterial::class);
     }
 }

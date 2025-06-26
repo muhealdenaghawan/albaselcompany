@@ -5,45 +5,56 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\Sluggable\HasSlug;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Sluggable\SlugOptions;
 
-class User extends Authenticatable
+class User extends Authenticatable implements HasMedia
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable, HasApiTokens;
+    use HasApiTokens, HasFactory, InteractsWithMedia;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var list<string>
-     */
+    public $table = 'users';
+
     protected $fillable = [
-        'name',
+        'first_name',
+        'last_name',
         'email',
         'password',
+        'role',
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var list<string>
-     */
+
     protected $hidden = [
         'password',
         'remember_token',
     ];
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
+    public function fullname(): string
+    {
+        return $this->first_name . " " . $this->last_name;
+    }
     protected function casts(): array
     {
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+    public function scopeFilterByName($query, $name)
+    {
+        return $query->where(function ($q) use ($name) {
+            $q->where('first_name', 'like', "%{$name}%")
+                ->orWhere('last_name', 'like', "%{$name}%")
+                ->orWhere('email', 'like', "%{$name}%")
+                ->orWhere('role', 'like', "%{$name}%");
+        });
+    }
+
+    public function registerMediaCollections(): void
+    {
+        $this->addMediaCollection('profile')->singleFile();
     }
 }
